@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/Stupnikjs/skeleton/api"
+	"github.com/Stupnikjs/musicsite/api"
 	_ "google.golang.org/api/option"
 )
 
