@@ -33,29 +33,7 @@ body {
   justify-content: space-between;
 }
 
-h1 {
-  color: green; 
-  background-color: aliceblue; 
-  padding: 0.5rem; 
-}
 
-
-#iconeUl {
-  margin: 10% auto;
-  display: flex;
-  list-style-type: none;
-  justify-content: space-around;
-}
-
-#iconeUl > li {
-  flex:1; 
-  justify-content: center;
-  display: flex;
-}
-
-#iconeUl > li > i {
-  font-size: 2rem;
-}
 
 .grid-section{
   display: grid;
@@ -70,82 +48,21 @@ h1 {
 
 
 
-
-
-
-.annoncesDiv{
-  display: flex;
-  flex-direction: column;
-  gap: 2%;
+.navbar {
+  height: 10vh;
+  width: 100%;
+  background-color: rgb(111, 111, 202);
+  color: rgb(238, 226, 226);
 }
 
-#annoncesDiv{
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1%; 
+.navbar > ul {
+display: flex;
+height: 100%;
+justify-content: space-around;
+align-items: center;
+list-style-type: none;
 }
 
-.annonceLink {
-  margin: 1px 0;
-  width: 45%;
-  background-color: aliceblue;
-  color: black; 
-  padding: .5rem;
-  display: flex; 
-  min-height: 8vh;
-  text-decoration: none;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  border: .1px solid lightgray;
-}
-
-.annonceLink:hover{
-  background-color: antiquewhite;
-}
-
-
-
-
-.lieuSpan{
-  text-decoration: none;
-  font-size: 0.5rem;
-  position: absolute;
-  bottom: .1vh;
-   
-}
- 
-.dateSpan{
-  position: absolute;
-  font-size: .5rem;
-  right: 1vw;
-}
-
-.depSpan{
-  position: absolute;
-  left: 1vw;
-  top: .5vh;
-  font-size: .7rem; 
-}
-
-
-.contratSpan{
-  position: absolute;
-  top: 5; 
-  font-size: small;
-  right: 1vw; 
-}
-
-.professionSpan{
-  color: gray; 
-}
-
-.searchForm {
-  display: flex;
-  flex-direction: column;
-}
 
 footer {
   
@@ -177,14 +94,7 @@ footer {
     grid-template-columns: 10fr 80fr 10fr ;
     
   }
-  
-  #locationDiv > input {
-    width: 10vw;
-    height: 5vh;
-    font-size: 2rem;
-    text-align: center;
-    
-  }
+
 
 
 
