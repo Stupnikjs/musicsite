@@ -64,6 +64,11 @@ list-style-type: none;
 }
 
 
+.audio-elem {
+  padding: 2rem;
+  background-color: azure;
+}
+
 footer {
   
   background-color: aliceblue;

@@ -10,10 +10,11 @@
                 </ul>
             </nav>
             <section>
-                <div>
-                    
+                {{ range .songs }}
+                <div class="audio-elem">
+                    <audio controls src="/song/{{ .songname }}"><a href="/link/{{ .songname }}"> {{ .songname }} </a> </audio>
                 </div>
-                
+                {{ end }}
             </section>
     
     

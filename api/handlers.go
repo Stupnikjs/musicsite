@@ -1,9 +1,14 @@
 package api
 
 import (
+	"fmt"
 	"html/template"
+	"io"
 	"net/http"
+	"os"
 	"path"
+
+	"github.com/go-chi/chi/v5"
 )
 
 var pathToTemplates = "./static/templates/"
@@ -34,4 +39,20 @@ func (app *Application) RenderAccueil(w http.ResponseWriter, r *http.Request) {
 	td := TemplateData{}
 	td.Data = make(map[string]any)
 	_ = render(w, r, "/main.gohtml", &td)
+}
+
+func (app *Application) GetSong(w http.ResponseWriter, r *http.Request) {
+	id := chi.URLParam(r, "id")
+	cwd, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+	}
+	songPath := path.Join(cwd, "static", "track", id)
+	fmt.Println(songPath)
+	file, err := os.Open(songPath)
+	fmt.Println(err, id)
+	if err != nil {
+		fmt.Println(err)
+	}
+	_, err = io.Copy(w, file)
 }
