@@ -38,6 +38,9 @@ func (app *Application) RenderAccueil(w http.ResponseWriter, r *http.Request) {
 
 	td := TemplateData{}
 	td.Data = make(map[string]any)
+
+	td.Data["songs"] = listAllSong()
+	fmt.Println(td)
 	_ = render(w, r, "/main.gohtml", &td)
 }
 
@@ -55,4 +58,21 @@ func (app *Application) GetSong(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 	}
 	_, err = io.Copy(w, file)
+}
+
+func listAllSong() []string {
+	var trackNames []string
+	cur, err := os.Getwd()
+	if err != nil {
+		fmt.Println(err)
+	}
+	trackPath := path.Join(cur, "static", "track")
+	entries, err := os.ReadDir(trackPath)
+
+	for _, e := range entries {
+		trackNames = append(trackNames, e.Name())
+	}
+
+	return trackNames
+
 }

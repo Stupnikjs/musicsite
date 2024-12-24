@@ -72,7 +72,10 @@ list-style-type: none;
 footer {
   
   background-color: aliceblue;
-  height: 20vh;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 
