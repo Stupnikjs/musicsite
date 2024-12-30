@@ -17,6 +17,12 @@ type TemplateData struct {
 	Data map[string]any
 }
 
+type Song struct {
+	Artist string
+	Name   string
+	YtLink string
+}
+
 func render(w http.ResponseWriter, r *http.Request, t string, td *TemplateData) error {
 	_ = r.Method
 
@@ -38,10 +44,15 @@ func (app *Application) RenderAccueil(w http.ResponseWriter, r *http.Request) {
 
 	td := TemplateData{}
 	td.Data = make(map[string]any)
-
 	td.Data["songs"] = listAllSong()
-	fmt.Println(td)
 	_ = render(w, r, "/main.gohtml", &td)
+}
+func (app *Application) RenderPlaylist(w http.ResponseWriter, r *http.Request) {
+
+	td := TemplateData{}
+	td.Data = make(map[string]any)
+	td.Data["songs"] = listPlaylist()
+	_ = render(w, r, "/playlist.gohtml", &td)
 }
 
 func (app *Application) GetSong(w http.ResponseWriter, r *http.Request) {
@@ -51,9 +62,7 @@ func (app *Application) GetSong(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 	}
 	songPath := path.Join(cwd, "static", "track", id)
-	fmt.Println(songPath)
 	file, err := os.Open(songPath)
-	fmt.Println(err, id)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -75,4 +84,18 @@ func listAllSong() []string {
 
 	return trackNames
 
+}
+
+func listPlaylist() []Song {
+	return []Song{
+		{Artist: "Elektronomia",
+			Name:   "Limitless",
+			YtLink: "https://www.youtube.com/watch?v=cNcy3J4x62M",
+		},
+		{
+			Artist: "Dandy Warhols",
+			Name:   "Godless",
+			YtLink: "https://www.youtube.com/watch?v=LduipA_XUJ8",
+		},
+	}
 }

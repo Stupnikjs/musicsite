@@ -69,13 +69,23 @@ list-style-type: none;
   background-color: azure;
 }
 
+.playlist-item > p > span {
+  margin-left: 1rem;
+  border-radius: 1rem;
+  border: 1px solid black;
+}
+
+
 footer {
-  
+  display: grid;
+  grid-template-columns: 30% 1fr 30%;
   background-color: aliceblue;
+  font-size: 0.8rem;
   min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+}
+
+footer > p {
+  grid-column: 2;
 }
 
 
