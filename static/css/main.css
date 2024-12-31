@@ -37,7 +37,7 @@ body {
 
 .grid-section{
   display: grid;
-  grid-template-columns: 30% 1fr 30%;
+  grid-template-columns: 20% 1fr 20%;
 }
 
 .padding-grid {
@@ -71,14 +71,38 @@ list-style-type: none;
 
 .playlist-item > p > span {
   margin-left: 1rem;
-  border-radius: 1rem;
-  border: 1px solid black;
+  
+}
+
+i {
+  color: red;
 }
 
 
+
+.playlist-item {
+
+  padding: .2rem .5rem;
+  min-width: 45%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.playlist-item > audio {
+  max-width: 50%;
+}
+
+
+.playlist-section {
+  display: flex;
+  gap: 2%;
+  flex-wrap: wrap;
+}
+
 footer {
   display: grid;
-  grid-template-columns: 30% 1fr 30%;
+  grid-template-columns: 20% 1fr 20%;
   background-color: aliceblue;
   font-size: 0.8rem;
   min-height: 20vh;

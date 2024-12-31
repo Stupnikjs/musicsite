@@ -21,6 +21,7 @@ type Song struct {
 	Artist string
 	Name   string
 	YtLink string
+	Path   string
 }
 
 func render(w http.ResponseWriter, r *http.Request, t string, td *TemplateData) error {
@@ -55,18 +56,26 @@ func (app *Application) RenderPlaylist(w http.ResponseWriter, r *http.Request) {
 	_ = render(w, r, "/playlist.gohtml", &td)
 }
 
-func (app *Application) GetSong(w http.ResponseWriter, r *http.Request) {
-	id := chi.URLParam(r, "id")
-	cwd, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err)
+func (app *Application) GetHandlerSong(isCompo bool) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		id := chi.URLParam(r, "id")
+		cwd, err := os.Getwd()
+		if err != nil {
+			fmt.Println(err)
+		}
+		var songPath string
+		if isCompo {
+			songPath = path.Join(cwd, "static", "track", "compo", id)
+		} else {
+			songPath = path.Join(cwd, "static", "track", "free", id)
+		}
+
+		file, err := os.Open(songPath)
+		if err != nil {
+			fmt.Println(err)
+		}
+		_, err = io.Copy(w, file)
 	}
-	songPath := path.Join(cwd, "static", "track", id)
-	file, err := os.Open(songPath)
-	if err != nil {
-		fmt.Println(err)
-	}
-	_, err = io.Copy(w, file)
 }
 
 func listAllSong() []string {
@@ -75,7 +84,7 @@ func listAllSong() []string {
 	if err != nil {
 		fmt.Println(err)
 	}
-	trackPath := path.Join(cur, "static", "track")
+	trackPath := path.Join(cur, "static", "track", "compo")
 	entries, err := os.ReadDir(trackPath)
 
 	for _, e := range entries {
@@ -87,15 +96,30 @@ func listAllSong() []string {
 }
 
 func listPlaylist() []Song {
+
 	return []Song{
 		{Artist: "Elektronomia",
 			Name:   "Limitless",
 			YtLink: "https://www.youtube.com/watch?v=cNcy3J4x62M",
+			Path:   "Limitless.mp3",
 		},
 		{
 			Artist: "Dandy Warhols",
 			Name:   "Godless",
 			YtLink: "https://www.youtube.com/watch?v=LduipA_XUJ8",
+			Path:   "",
+		},
+		{
+			Artist: "Martin Garrix and MOTi",
+			Name:   "Virus",
+			YtLink: "https://www.youtube.com/watch?v=iXIDtf1wP0g",
+			Path:   "",
+		},
+		{
+			Artist: "The Glitch Mob",
+			Name:   "We can make the world stop",
+			YtLink: "https://www.youtube.com/watch?v=H-k_Eg7zXuc",
+			Path:   "",
 		},
 	}
 }
