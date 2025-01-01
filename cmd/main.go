@@ -7,7 +7,6 @@ import (
 
 	"github.com/Stupnikjs/musicsite/api"
 	"github.com/Stupnikjs/musicsite/database"
-
 	_ "google.golang.org/api/option"
 )
 
