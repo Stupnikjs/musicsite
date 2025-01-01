@@ -3,12 +3,13 @@ package api
 import (
 	"net/http"
 
+	"github.com/Stupnikjs/musicsite/database"
 	"github.com/go-chi/chi/v5"
 )
 
 type Application struct {
 	Port int
- DB   database.Repo
+	DB   database.DBRepo
 }
 
 func (app *Application) Routes() http.Handler {

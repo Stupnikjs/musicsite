@@ -1,4 +1,3 @@
 *.json
 *.text
 .env
-/static/track
