@@ -48,19 +48,7 @@ func (app *Application) RenderAccueil(w http.ResponseWriter, r *http.Request) {
 	td.Data["songs"] = listAllSong()
 	_ = render(w, r, "/main.gohtml", &td)
 }
-func (app *Application) RenderTest(w http.ResponseWriter, r *http.Request) {
 
-	uri := os.Getenv("DATABASE_URL")
-	if uri != "postgres://musicsitedb:pknJ52O74bo6LS2@musicdb.flycast:5432/musicsitedb?sslmode=disable" {
-		w.Write([]byte("ERROR"))
-		return
-	}
-	td := TemplateData{}
-	td.Data = make(map[string]any)
-	td.Data["songs"] = listAllSong()
-
-	_ = render(w, r, "/test.gohtml", &td)
-}
 func (app *Application) RenderPlaylist(w http.ResponseWriter, r *http.Request) {
 
 	td := TemplateData{}

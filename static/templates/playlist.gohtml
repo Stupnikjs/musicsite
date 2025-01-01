@@ -3,6 +3,12 @@
 {{define "content"}}
 
             <section class="playlist-section">
+                <div> 
+                    <p> 
+                        Here you will find my favourites tracks for workout 
+                    </p> 
+                </div>
+
                 {{ range .Data.songs }}
                     <div class="playlist-item" >
                         <p> {{ .Name }} <span> {{ .Artist }} </span>   <a href={{.YtLink}} > <i class="fa-brands fa-youtube"></i> </a> </p>
