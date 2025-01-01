@@ -3,17 +3,12 @@
 {{define "content"}}
   
 
-            <nav class="navbar"> 
-                <ul>
-                    <li> Mes Compos </li>
-                    <li> Running Playlist </li>
-                </ul>
-            </nav>
+            
             <section>
                 {{ range .Data.songs }}
                 <div class="audio-elem">
                     <p> {{ . }} </p>
-                    <audio controls src="/song/{{ . }}"></audio>
+                    <audio controls src="/song/compo/{{ . }}"></audio>
                 </div>
                 {{ end }}
             </section>

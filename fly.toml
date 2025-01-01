@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for skeletontest on 2024-12-22T20:42:10+01:00
+# fly.toml app configuration file generated for musicsite on 2024-12-25T20:27:55+01:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'skeletontest'
+app = 'musicsite'
 primary_region = 'cdg'
 
 [build]

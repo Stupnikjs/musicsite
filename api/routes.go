@@ -8,6 +8,7 @@ import (
 
 type Application struct {
 	Port int
+ DB   database.Repo
 }
 
 func (app *Application) Routes() http.Handler {
@@ -16,7 +17,9 @@ func (app *Application) Routes() http.Handler {
 
 	// register routes
 	mux.Get("/", app.RenderAccueil)
-	mux.Get("/song/{id}", app.GetSong)
+	mux.Get("/playlist", app.RenderPlaylist)
+	mux.Get("/song/compo/{id}", app.GetHandlerSong(true))
+	mux.Get("/song/free/{id}", app.GetHandlerSong(false))
 	fileServer := http.FileServer(http.Dir("./static/"))
 	mux.Handle("/static/*", http.StripPrefix("/static", fileServer))
 

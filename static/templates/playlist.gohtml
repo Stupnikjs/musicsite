@@ -1,0 +1,19 @@
+{{template "base" .}}
+
+{{define "content"}}
+
+            <section class="playlist-section">
+                {{ range .Data.songs }}
+                    <div class="playlist-item" >
+                        <p> {{ .Name }} <span> {{ .Artist }} </span>   <a href={{.YtLink}} > <i class="fa-brands fa-youtube"></i> </a> </p>
+                        <audio controls src="/song/free/{{ .Path }}"></audio>
+                        
+
+                    </div>
+
+                {{ end }}
+            </section>
+    
+    
+    
+{{end}}
