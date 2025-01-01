@@ -19,6 +19,7 @@ html, body , ul{
 margin: 0; 
 padding: 0; 
 font-family: "voltaire";
+color: rgb(62, 58, 58);
 
 }
 
@@ -38,6 +39,9 @@ body {
 .grid-section{
   display: grid;
   grid-template-columns: 20% 1fr 20%;
+  background-image: url("../img/pexels-jorischlr-19168467.jpg");
+  background-size: cover;
+  background-position: -20%;
   
 }
 
@@ -52,8 +56,8 @@ body {
 .navbar {
   height: 10vh;
   width: 100%;
-  background-color: rgb(111, 111, 202);
-  color: rgb(238, 226, 226);
+  background-color: rgba(255, 255, 255, .9);
+  color: rgb(112, 91, 91);
 }
 
 .navbar > ul {
@@ -66,10 +70,10 @@ list-style-type: none;
 
 section {
   height: 70vh;
-  background-color: rgba(3, 33, 33, .4);
+  background-color: rgba(255, 255, 255, .7);
 }
 .audio-elem {
-  padding: .2rem 2rem;
+  padding: 0 2rem;
   display: flex;
   align-items: center;
 }
@@ -77,8 +81,7 @@ section {
 .audio-elem > p {
   width:  40% ;
   text-align: center;
-  background-color: black;
-  color: white;
+  
 }
 .audio-elem > audio {
   height: 5vh;
@@ -114,7 +117,15 @@ i {
   display: flex;
   gap: 2%;
   flex-wrap: wrap;
+
 }
+
+.playlist-intro-container {
+  border-bottom: .1px solid black;
+  margin: auto;
+}
+
+
 
 footer {
   display: grid;
