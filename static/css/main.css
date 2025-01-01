@@ -38,9 +38,7 @@ body {
 .grid-section{
   display: grid;
   grid-template-columns: 20% 1fr 20%;
-  /* background-image: url('../img/IMG_0685.JPG'); */
-  background-size: cover;
-  z-index: -1;
+  
 }
 
 .padding-grid {
