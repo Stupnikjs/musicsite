@@ -38,6 +38,9 @@ body {
 .grid-section{
   display: grid;
   grid-template-columns: 20% 1fr 20%;
+  background-image: url('../img/IMG_0685.JPG');
+  background-size: cover;
+  z-index: -1;
 }
 
 .padding-grid {
@@ -63,10 +66,25 @@ align-items: center;
 list-style-type: none;
 }
 
-
+section {
+  height: 70vh;
+  background-color: rgba(3, 33, 33, .4);
+}
 .audio-elem {
-  padding: 2rem;
-  background-color: azure;
+  padding: .2rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.audio-elem > p {
+  width:  40% ;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+.audio-elem > audio {
+  height: 5vh;
+  margin-left: 1rem;
 }
 
 .playlist-item > p > span {

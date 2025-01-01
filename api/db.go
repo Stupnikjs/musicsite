@@ -28,7 +28,9 @@ func openDB(uri string) (*sql.DB, error) {
 	// Verify connection
 	err = db.Ping()
 	if err != nil {
-		log.Fatalf("Unable to connect to database: %v", err)
+		// log.Fatalf("Unable to connect to database: %v", err)
+		fmt.Println("no connection to db")
+		return nil, err
 	}
 
 	fmt.Println("Successfully connected to the database!")
