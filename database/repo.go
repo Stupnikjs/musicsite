@@ -1,6 +1,7 @@
 package database
 
 type DBRepo interface {
-	IncrementListenCount(musicId int)
-	LeaveComment(musicId int, comment string)
+	IncrementListenCount(musicId int) error
+	LeaveComment(musicId int, comment string) error
+	InsertSong(name string) error
 }
