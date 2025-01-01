@@ -39,9 +39,9 @@ body {
 .grid-section{
   display: grid;
   grid-template-columns: 20% 1fr 20%;
-  background-image: url("../img/pexels-jorischlr-19168467.jpg");
+  background-image: url("../img/pexels-helloayush-29986005.jpg");
   background-size: cover;
-  background-position: -20%;
+  background-position: 10%;
   
 }
 
@@ -56,7 +56,7 @@ body {
 .navbar {
   height: 10vh;
   width: 100%;
-  background-color: rgba(255, 255, 255, .9);
+  background-color: rgba(75, 61, 61, 0.9);
   color: rgb(112, 91, 91);
 }
 
@@ -68,9 +68,14 @@ align-items: center;
 list-style-type: none;
 }
 
+.navbar a {
+  text-decoration: none;
+  color: white; 
+}
+
 section {
-  height: 70vh;
-  background-color: rgba(255, 255, 255, .7);
+  min-height: 70vh;
+  background-color: rgba(255, 255, 255, .9);
 }
 .audio-elem {
   padding: 0 2rem;
@@ -100,11 +105,14 @@ i {
 
 
 .playlist-item {
-
+  margin: .1rem;
   padding: .2rem .5rem;
   min-width: 45%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  border: .1px solid black;
+  width: 80%;
 
 }
 
@@ -115,8 +123,8 @@ i {
 
 .playlist-section {
   display: flex;
-  gap: 2%;
   flex-wrap: wrap;
+  justify-content: center;
 
 }
 
@@ -130,7 +138,7 @@ i {
 footer {
   display: grid;
   grid-template-columns: 20% 1fr 20%;
-  background-color: aliceblue;
+  background-color: rgb(238, 243, 247);
   font-size: 0.8rem;
   min-height: 20vh;
 }

@@ -13,10 +13,9 @@
 
                 {{ range .Data.songs }}
                     <div class="playlist-item" >
-                        <p> {{ .Name }} <span> {{ .Artist }} </span>   <a href={{.YtLink}} > <i class="fa-brands fa-youtube"></i> </a> </p>
+                        <p> {{ .Name }} <span> {{ .Artist }} </span> </p>
+                        <a href={{.YtLink}} > <i class="fa-brands fa-youtube"></i> </a>
                         <audio controls src="/song/free/{{ .Path }}"></audio>
-                        
-
                     </div>
 
                 {{ end }}
