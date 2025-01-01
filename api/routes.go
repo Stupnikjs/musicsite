@@ -8,6 +8,7 @@ import (
 
 type Application struct {
 	Port int
+ Db *database.Repo
 }
 
 func (app *Application) Routes() http.Handler {
