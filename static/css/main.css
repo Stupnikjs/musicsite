@@ -40,10 +40,10 @@ body {
 .grid-section{
   display: grid;
   grid-template-columns: 20% 1fr 20%;
-  /*background-image: url("../img/pexels-helloayush-29986005.jpg");
+  background-image: url("../img/porte.JPG");
   background-size: cover;
   background-position: 10%;
-  */
+  
 }
 
 .padding-grid {
