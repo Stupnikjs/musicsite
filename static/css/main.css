@@ -19,7 +19,7 @@ html, body , ul{
 margin: 0; 
 padding: 0; 
 font-family: "voltaire";
-font-size: 1rem;
+font-size: 1.2rem;
 color: rgb(19, 18, 18);
 
 }
@@ -33,6 +33,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-image: url("../img/fleur.png");
+  background-repeat: repeat;
+  background-size: 5%;
+  
 }
 
 
@@ -40,9 +44,8 @@ body {
 .grid-section{
   display: grid;
   grid-template-columns: 20% 1fr 20%;
-  background-image: url("../img/porte.JPG");
-  background-size: cover;
-  background-position: 10%;
+  
+
   
 }
 
@@ -71,7 +74,7 @@ list-style-type: none;
 
 .navbar a {
   text-decoration: none;
-  color: white; 
+  color: rgb(0, 0, 0); 
 }
 
 section {
@@ -147,9 +150,14 @@ footer {
   min-height: 20vh;
 }
 
-footer > p {
+footer > div {
   grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+
 
 
 
@@ -169,7 +177,11 @@ footer > p {
 
 @media (max-width: 900px) {
     
-    
+  html, body , ul{
+   
+    font-size: 1rem;
+
+    }
   .grid-section{
     display: grid;
     grid-template-columns: 10fr 80fr 10fr ;
